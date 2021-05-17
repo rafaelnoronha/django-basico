@@ -1,0 +1,6 @@
+header {
+    background: url("/static/img/banner.jpeg") no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
