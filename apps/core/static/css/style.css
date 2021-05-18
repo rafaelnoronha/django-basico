@@ -4,3 +4,7 @@ header {
     background-size: cover;
     background-attachment: fixed;
 }
+
+.imagem-produto {
+    height: 500px;
+}
