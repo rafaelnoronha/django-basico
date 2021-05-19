@@ -10,7 +10,6 @@
 </head>
 
 <body>
-{{ empresa }}
   <nav class="navbar navbar-expand-md navbar-light bg-dark bg-gradient">
     <div class="container-fluid">
       <a href="{% url 'core:home' %}" class="navbar-brand text-light"><i class="fas fa-book-open"></i> Livraria
@@ -170,8 +169,8 @@
   <footer class="container-fluid bg-dark mt-4">
     <div class="d-flex flex-column align-items-center justify-content-center py-5">
       <p class="fs-6 text-light mb-0"></p>
-      <p class="fs-6 text-light mb-0">Rua Queluzita, 34(Global Tower) - União - Belo Horizonte - MG</p>
-      <p class="fs-6 text-light mb-0">CNPJ: 00.000.000/0000-00</p>
+      <a class="fs-6 text-light mb-0" href="{{ empresa.link_endereco }}" target="_blank">{{ empresa.endereco }}</a>
+      <p class="fs-6 text-light mb-0">CNPJ: {{ empresa.cnpj }}</p>
     </div>
   </footer>
 

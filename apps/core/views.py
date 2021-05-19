@@ -3,7 +3,7 @@ from .models import Empresa
 
 
 def home(request):
-    empresa = Empresa.objects.get(id=1)
+    empresa = Empresa.objects.last()
 
     context = {
         'empresa': empresa
