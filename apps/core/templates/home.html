@@ -41,50 +41,21 @@
     <article class="mb-5">
       <h3 class="mb-4">Campeões de Vendas</h3>
       <div class="row row-cols-2 row-cols-sm-2 row-cols-md-3 row-cols-lg-4 g-4">
-        <div class="col">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
+
+        {% for produto in produtos_mais_vendidos %}
+          <div class="col">
+            <div class="card">
+              <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
+              <div class="card-body">
+                <h5 class="card-title">{{ produto.nome }}</h5>
+                <p class="card-text">R${{ produto.preco }}</p>
+                <p class="card-text">{{ produto.quantidade_vendida }} unidades vendidas</p>
+                <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
+              </div>
             </div>
           </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                content.</p>
-              <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
-            </div>
-          </div>
-        </div>
-        <div class="col">
-          <div class="card">
-            <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
-            <div class="card-body">
-              <h5 class="card-title">Card title</h5>
-              <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                content. This content is a little bit longer.</p>
-              <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
-            </div>
-          </div>
-        </div>
+        {% endfor %}
+
       </div>
     </article>
 
@@ -92,75 +63,28 @@
       <aside class="col-lg-3 mb-5">
         <div class="list-group">
           <a href="#" class="list-group-item list-group-action active">Todos</a>
-          <a href="" class="list-group-item list-group-action">Medievais</a>
-          <a href="" class="list-group-item list-group-action">Romance</a>
-          <a href="" class="list-group-item list-group-action">Auto Ajuda</a>
-          <a href="" class="list-group-item list-group-action">Futuristicos</a>
-          <a href="" class="list-group-item list-group-action">Últimos Lançamentos</a>
+          {% for categoria in categorias %}
+            <a href="#" class="list-group-item">{{ categoria.nome }}</a>
+          {% endfor %}
         </div>
       </aside>
 
       <article class="col-lg-9">
         <div class="row">
-          <div class="col-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-              <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
+          
+          {% for produto in produtos %}
+            <div class="col-6 col-md-4 col-lg-3 mb-4">
+              <div class="card">
+                <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">{{ produto.nome }}</h5>
+                  <p class="card-text">R${{ produto.preco }}</p>
+                  <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
+                </div>
               </div>
             </div>
-          </div>
-  
-          <div class="col-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-              <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
-              </div>
-            </div>
-          </div>
-  
-          <div class="col-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-              <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
-              </div>
-            </div>
-          </div>
+          {% endfor %}
 
-          <div class="col-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-              <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-6 col-md-4 col-lg-3 mb-4">
-            <div class="card">
-              <img src="https://via.placeholder.com/300x400" class="card-img-top" alt="...">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-                <p class="card-text">This is a longer card with supporting text below as a natural lead-in to additional
-                  content. This content is a little bit longer.</p>
-                <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
-              </div>
-            </div>
-          </div>
         </div>
       </article>
     </div>
@@ -168,7 +92,7 @@
 
   <footer class="container-fluid bg-dark mt-4">
     <div class="d-flex flex-column align-items-center justify-content-center py-5">
-      <p class="fs-6 text-light mb-0"></p>
+      <p class="fs-6 text-light mb-0">{{ empresa.razao_social }}</p>
       <a class="fs-6 text-light mb-0" href="{{ empresa.link_endereco }}" target="_blank">{{ empresa.endereco }}</a>
       <p class="fs-6 text-light mb-0">CNPJ: {{ empresa.cnpj }}</p>
     </div>
