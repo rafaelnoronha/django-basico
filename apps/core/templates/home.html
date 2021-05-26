@@ -79,7 +79,7 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ produto.nome }}</h5>
                   <p class="card-text">R${{ produto.preco }}</p>
-                  <a href="#" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
+                  <a href="{{ produto.get_absolute_url }}" class="btn btn-primary btn-sm d-flex justify-content-center">Comprar</a>
                 </div>
               </div>
             </div>

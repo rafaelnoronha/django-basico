@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 
 class Base(models.Model):
@@ -64,6 +65,9 @@ class Produto(Base):
     class Meta:
         ordering = ('-id',)
         verbose_name_plural = 'Produtos'
+
+    def get_absolute_url(self):
+        return reverse('produtos:produto', args=[self.id])
 
     def __str__(self):
         return f'{self.nome} - R${self.preco}'
